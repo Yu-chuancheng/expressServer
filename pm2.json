@@ -1,0 +1,10 @@
+{
+      "name":"node-app",
+      "pm2 list":"./bin/www",
+      "watch":true,
+      "ignore-watch":"node_modules",
+      "instances":"max",
+      "exec_mode":"cluster",
+      "log_date_format":"YYYY-MM-DD HH:mm Z",
+      "out_file":"log/node-app.stdout.log"
+  }
