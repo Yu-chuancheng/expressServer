@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var config = require('../config/config-lite')
-mongoose.connect(config.url, { server: { auto_reconnect: true } });
+mongoose.connect(config.url, {useNewUrlParser: true,useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 
 const db = mongoose.connection;
@@ -19,7 +19,7 @@ db.on('error', function (error) {
 
 db.on('close', function () {
   console.log('数据库断开，重新连接数据库');
-  mongoose.connect(config.url, { server: { auto_reconnect: true } });
+  mongoose.connect(config.url, {useNewUrlParser: true,useUnifiedTopology: true});
 });
 
 module.exports = db;

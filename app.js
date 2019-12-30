@@ -19,9 +19,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+// 用户相关
 app.use('/users', usersRouter);
 app.use('/addDoc',require('./routes/document'))
 app.use('/upload',require('./routes/upload'))
+app.use('/authority',require('./routes/authority'))
+app.use('/role',require('./routes/role'))
+app.use('/article',require('./routes/article'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
